@@ -18,14 +18,13 @@
       min-height: 100vh;
     }
     header {
-      background-color: #000; /* siyah */
-      color: #FFD700; /* altın sarısı */
+      background-color: #000;
+      color: #FFD700;
       display: flex;
       align-items: center;
       padding: 15px 30px;
       gap: 15px;
     }
-    /* Logo kısmı */
     .logo {
       display: flex;
       align-items: center;
@@ -46,9 +45,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 60px); /* header yüksekliğine göre */
       text-align: center;
-      padding: 0 20px;
+      padding: 30px 20px;
     }
     main h1 {
       font-size: 3rem;
@@ -62,7 +60,33 @@
       color: #555;
       max-width: 500px;
     }
-    /* Responsive */
+
+    /* SLIDER STİLİ */
+    .slider {
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto;
+      overflow: hidden;
+      border: 4px solid #FFD700;
+      border-radius: 12px;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 15s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      33.33%  { transform: translateX(-100%); }
+      66.66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
     @media (max-width: 600px) {
       main h1 {
         font-size: 2rem;
@@ -76,7 +100,6 @@
 <body>
   <header>
     <div class="logo" aria-label="Currency Exchange Logo">
-      <!-- Basit para simgesi SVG -->
       <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
         <circle cx="32" cy="32" r="30" stroke-width="4" />
         <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
@@ -85,48 +108,18 @@
       <span>CURRENCY COLLECTION MARKET</span>
     </div>
   </header>
+
   <main>
     <h1>CURRENCY COLLECTION MARKET</h1>
-    <p>WELCOME TO OUR ONLINE CATALOGf45f</p>
-	<!-- Ana sayfa kodunun uygun bir yerine (örneğin <main> içine) ekle -->
-<div class="slider">
-  <div class="slides">
-    <img src="images/img.jpg" alt="1. görsel">
-    <img src="images/imgg.jpg" alt="2. görsel">
-    <img src="C:\Users\sema.ozgonul\Screenshot 2025-04-18 220205.jpg" alt="3. görsel">
-  </div>
-</div>
+    <p>WELCOME TO OUR ONLINE CATALOG</p>
 
-<style>
-.slider {
-  width: 100%;
-  max-width: 800px;
-  margin: 30px auto;
-  overflow: hidden;
-  border: 4px solid #FFD700;
-  border-radius: 12px;
-}
-
-.slides {
-  display: flex;
-  width: 300%;
-  animation: slide 15s infinite;
-}
-
-.slides img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-@keyframes slide {
-  0%   { transform: translateX(0%); }
-  33.33%  { transform: translateX(-100%); }
-  66.66%  { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
-}
-</style>
-
+    <div class="slider">
+      <div class="slides">
+        <img src="images/img.jpg" alt="1. görsel">
+        <img src="images/imgg.jpg" alt="2. görsel">
+        <img src="images/immgg.jpg" alt="3. görsel">
+      </div>
+    </div>
   </main>
 </body>
 </html>
