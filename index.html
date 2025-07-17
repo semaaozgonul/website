@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CURRENCY COLLECTION MARKET</title>
+  <style>
+    /* Genel sıfırlama */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #222;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #000; /* siyah */
+      color: #FFD700; /* altın sarısı */
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      gap: 15px;
+    }
+    /* Logo kısmı */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFD700;
+      stroke: #FFD700;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 60px); /* header yüksekliğine göre */
+      text-align: center;
+      padding: 0 20px;
+    }
+    main h1 {
+      font-size: 3rem;
+      color: #000;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    main p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 500px;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      main h1 {
+        font-size: 2rem;
+      }
+      header {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Currency Exchange Logo">
+      <!-- Basit para simgesi SVG -->
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" stroke-width="4" />
+        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+        <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
+      </svg>
+      <span>CURRENCY COLLECTION MARKET</span>
+    </div>
+  </header>
+  <main>
+    <h1>CURRENCY COLLECTION MARKET</h1>
+    <p>Türkiye'nin lider para koleksiyon ve müzayede platformuna hoş geldiniz.</p>
+  </main>
+</body>
+</html>
