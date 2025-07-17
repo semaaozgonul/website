@@ -88,6 +88,44 @@
   <main>
     <h1>CURRENCY COLLECTION MARKET</h1>
     <p>Türkiye'nin lider para koleksiyon ve müzayede platformuna hoş geldiniz.</p>
+	<!-- Ana sayfa kodunun uygun bir yerine (örneğin <main> içine) ekle -->
+<div class="slider">
+  <div class="slides">
+    <img src="https://via.placeholder.com/800x400/FFD700/000000?text=Altin+Sikke" alt="1. görsel">
+    <img src="https://via.placeholder.com/800x400/222/FFD700?text=Koleksiyon+Muzayedesi" alt="2. görsel">
+    <img src="https://via.placeholder.com/800x400/000/FFD700?text=Currency+Exchange" alt="3. görsel">
+  </div>
+</div>
+
+<style>
+.slider {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: hidden;
+  border: 4px solid #FFD700;
+  border-radius: 12px;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 9s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+</style>
+
   </main>
 </body>
 </html>
