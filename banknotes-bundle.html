@@ -4,28 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CURRENCY COLLECTION MARKET</title>
-  <link rel="stylesheet" href="style.css">
+
   <style>
-    /* Genel sıfırlama */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     body {
       background: #fff;
       color: #222;
       min-height: 100vh;
     }
+
     header {
       background-color: #000;
       color: #FFD700;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       padding: 15px 30px;
       gap: 15px;
     }
+
     .logo {
       display: flex;
       align-items: center;
@@ -35,69 +39,209 @@
       letter-spacing: 1px;
       user-select: none;
     }
+
     .logo svg {
       width: 32px;
       height: 32px;
       fill: #FFD700;
       stroke: #FFD700;
     }
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px 20px;
+
+    nav a, .dropbtn {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
     }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #FFD700;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
     main h1 {
-      font-size: 3rem;
-      color: #000;
+      font-size: 2.5rem;
       margin-bottom: 10px;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
+
     main p {
       font-size: 1.2rem;
       color: #555;
-      max-width: 500px;
+      margin-bottom: 30px;
     }
 
-  
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
 
+    .card {
+      width: 90%;
+      max-width: 300px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+      padding: 1em;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      margin-bottom: 1em;
+    }
+
+    .carousel img {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      border-radius: 8px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card .title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      display: block;
+    }
+
+    .card .price {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #27ae60;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .card::after {
+      content: "Add to Cart";
+      position: absolute;
+      bottom: -50px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: 2.5em;
+      background: #00AC7C;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      line-height: 2.5em;
+      border-radius: 5px;
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover::after {
+      bottom: 10px;
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 95%;
+      }
+    }
   </style>
 </head>
 <body>
- <header>
-  <div class="logo" aria-label="Currency Exchange Logo">
-    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <circle cx="32" cy="32" r="30" stroke-width="4" />
-      <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
-      <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
-    </svg>
-    <span class="logo-text">CURRENCY COLLECTION MARKET</span>
-  </div>
 
-  <nav class="header-menu">
-    <a href="index.html">Home</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="contact.html">Contact</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Products ▾</button>
-      <div class="dropdown-content">
-	  <a href="allproducts.html">All Products</a>
-        <a href="banknotes-brick.html">Bricks</a>
-        <a href="banknotes-bundle.html">Bundles</a>
-        <a href="banknotes.html">Banknotes</a>
-      </div>
+  <header>
+    <div class="logo" aria-label="Currency Exchange Logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" stroke-width="4" />
+        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+        <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
+      </svg>
+      <span class="logo-text">CURRENCY COLLECTION MARKET</span>
     </div>
-  </nav>
-</header>
+
+    <nav class="header-menu">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Products ▾</button>
+        <div class="dropdown-content">
+          <a href="allproducts.html">All Products</a>
+          <a href="banknotes-brick.html">Brick</a>
+          <a href="banknotes-bundle.html">Bundle</a>
+          <a href="banknotes.html">Country Set</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <h1>CURRENCY COLLECTION MARKET</h1>
     <p>BUNDLE</p>
 
+    <div class="card-container">
+      <div class="card">
+        <div class="carousel">
+          <img src="img.jpg" alt="Resim 1">
+          <img src="imgg.jpg" alt="Resim 2">
+          <img src="immgg.jpg" alt="Resim 3">
+        </div>
+        <span class="title">Ürün A</span>
+        <span class="price">₺199</span>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="img.jpg" alt="Resim 1">
+          <img src="imgg.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün B</span>
+        <span class="price">$2.49</span>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="imgg.jpg" alt="Resim 1">
+          <img src="img.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün C</span>
+        <span class="price">€1.49</span>
+      </div>
+    </div>
   </main>
+
 </body>
 </html>
