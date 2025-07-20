@@ -26,6 +26,19 @@
       color: #222;
       min-height: 100vh;
     }
+	 body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('https://medyascope.tv/wp-content/uploads/2022/09/kralic%CC%A7e-elizabeth.jpeg'); /* Buraya istediğiniz arka plan resminin URL'sini ekleyin */
+                background-size: cover;
+                background-position: center;
+                filter:  grayscale(50%) opacity(35%); /* Flu etki */
+                z-index: -1; /* Arka plana yerleştirmek için */
+            }
     header {
       background-color: #000;
       color: #FFD700;
