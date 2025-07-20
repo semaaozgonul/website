@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CURRENCY COLLECTION MARKET</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
   <style>
     /* Genel sıfırlama */
     * {
@@ -92,6 +99,106 @@
       color: #e6c200;
     }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;           /* İkon boyutu */
+  width: 56px;               /* Buton genişliği */
+  height: 56px;              /* Buton yüksekliği */
+  border-radius: 50%;        /* Yuvarlak yapmak için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+  /* Genel Ayarlar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Siyah arka plan */
+            color: #fff; /* Beyaz yazı */
+        }
+
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('https://medyascope.tv/wp-content/uploads/2022/09/kralic%CC%A7e-elizabeth.jpeg'); /* Buraya istediğiniz arka plan resminin URL'sini ekleyin */
+                background-size: cover;
+                background-position: center;
+                filter:  grayscale(50%) opacity(35%); /* Flu etki */
+                z-index: -1; /* Arka plana yerleştirmek için */
+            }
+
+        /* Header */
+        header {
+            text-align: center;
+            background-color: #000; /* Sarı arka plan */
+            color: #ffd700; /* Siyah yazı */
+            padding: 20px 0;
+            border-bottom: 4px solid #000;
+        }
+
+            header h1 {
+                font-size: 2.5em;
+                margin: 0;
+            }
+
+            header p {
+                font-size: 1.2em;
+                margin: 5px 0 0;
+            }
+
+        /* Ana İçerik */
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #222; /* Siyahın hafif tonu */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+            main h2 {
+                color: #ffd700; /* Sarı başlıklar */
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            main p {
+                font-size: 1.1em;
+                color: #ddd; /* Açık gri içerik */
+                line-height: 1.6;
+            }
+
+            main .mission,
+            main .vision {
+                margin-top: 30px;
+                padding: 20px;
+                background-color: #333; /* Daha açık siyah */
+                border: 2px solid #ffd700; /* Sarı kenarlık */
+                border-radius: 5px;
+            }
+
+                main .mission h3,
+                main .vision h3 {
+                    margin-bottom: 10px;
+                    color: #ffd700; /* Sarı başlıklar */
+                }
 
   </style>
 </head>
@@ -121,22 +228,69 @@
       </div>
     </div>
   </nav>
+  
+   <header>
+        <h1>About Us</h1>
+        <p>We aim to keep alive and expand the money culture and collection all over the world.</p>
+    </header>
 </header>
 
-  <main>
-    <h1>CURRENCY COLLECTION MARKET</h1>
-    <p>ABOUT US</p>
+   
+
+    <main>
+        <h2>Who Are We?</h2>
+        <p>
+            We are a community that values ​​numismatics and banknote collecting. We have been organizing organizations around this idea for years and, as the Babil auction family, we have successfully completed many international auctions. We still carry out cultural and commercial activities in the field of auctioneering.
+        </p>
+
+        <section class="mission">
+            <h3>Our Mission</h3>
+            <p>
+                To ensure that the culture and values ​​in this field continue to live by bringing together various world currencies and old banknotes with the right owners, that is, you, valuable collectors and value investors.
+            </p>
+        </section>
+
+        <section class="vision">
+            <h3>Our Vision</h3>
+            <p>
+                In addition to being a reliable auction platform on a global scale, while bringing you different types of banknotes, we aim to expand our activities every day and carry the values ​​of the past and present more strongly into the future. </p>
+        </section>
+
 
   </main>
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2025 CURRENCY COLLECTION MARKET</p>
-      <p>
-        <a href="contact.html">İletişim</a> |
-        <a href="aboutus.html">Hakkımızda</a> |
-        <a href="allproducts.html">Tüm Ürünler</a>
-      </p>
+
+<a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<footer style="background-color: #111; color: #f8f9fa; padding: 30px 0;">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4 mb-3">
+        <h5 style="color: #ffcc00;">Contact</h5>
+        <p><strong style="color: #ffcc00;">Telephone:</strong><br> (+90) 0536 053 67 44</p>
+        <p><strong style="color: #ffcc00;">E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5 style="color: #ffcc00;">Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none" style="color: #ffcc00;">Home</a></li>
+          <li><a href="aboutus.html" class="text-decoration-none" style="color: #ffcc00;">About us</a></li>
+          <li><a href="contact.html" class="text-decoration-none" style="color: #ffcc00;">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+
+    <div class="mb-3">
+      <p>© 2025 CurrencyCollectionMarket.</p>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <span style="color: #f8f9fa;"><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
+      <span style="color: #f8f9fa;"><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
