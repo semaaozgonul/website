@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CURRENCY COLLECTION MARKET</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Siyah arka plan */
+            color: #fff; /* Beyaz yazı */
+        }
+	 body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('https://www.duvargiydir.com/media/catalog/product/h/m/hmap0098-harita-duvar-kagidi-ev-dekorasyon-piri-reis-haritasi.jpg'); /* Buraya istediğiniz arka plan resminin URL'sini ekleyin */
+                background-size: cover;
+                background-position: center;
+                filter:  grayscale(40%) opacity(25%); /* Flu etki */
+                z-index: -1; /* Arka plana yerleştirmek için */
+            }
+
+    /* HEADER */
+    header {
+      background-color: #000;
+      color: #FFD700;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFD700;
+      stroke: #FFD700;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      color: #FFD700;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .header-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .header-menu a,
+    .dropbtn {
+      color: #000;
+      background-color: #FFD700;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color 0.3s;
+    }
+
+    .header-menu a:hover,
+    .dropbtn:hover {
+      background-color: #e6c200;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 160px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* MAIN */
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    main h1 {
+      font-size: 2.5rem;
+      color: #000;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    main p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 500px;
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      main h1 {
+        font-size: 2rem;
+      }
+
+      .slider {
+        height: 250px;
+      }
+
+      .header-menu {
+        justify-content: center;
+        flex: 1 1 100%;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slider {
+        height: 180px;
+      }
+
+      .logo-text {
+        font-size: 0.9rem;
+      }
+
+      .header-menu a, .dropbtn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
+    }
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;           /* İkon boyutu */
+  width: 56px;               /* Buton genişliği */
+  height: 56px;              /* Buton yüksekliği */
+  border-radius: 50%;        /* Yuvarlak yapmak için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 300px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+      padding: 1em;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      margin-bottom: 1em;
+    }
+
+    .carousel img {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      border-radius: 8px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card .title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      display: block;
+    }
+
+    .card .price {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #27ae60;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .card::after {
+      content: "Add to Cart";
+      position: absolute;
+      bottom: -50px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: 2.5em;
+      background: #00AC7C;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      line-height: 2.5em;
+      border-radius: 5px;
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover::after {
+      bottom: 10px;
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 95%;
+      }
+    }
+	
+    /* FOOTER */
+    .site-footer {
+      width: 100%;
+      background-color: #000;
+      color: #FFD700;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+      color: #e6c200;
+    }
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;           /* İkon boyutu */
+  width: 56px;               /* Buton genişliği */
+  height: 56px;              /* Buton yüksekliği */
+  border-radius: 50%;        /* Yuvarlak yapmak için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo" aria-label="Currency Exchange Logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" stroke-width="4" />
+        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+        <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
+      </svg>
+      <span class="logo-text">CURRENCY COLLECTION MARKET</span>
+    </div>
+
+    <nav class="header-menu">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Products ▾</button>
+        <div class="dropdown-content">
+          <a href="allproducts.html">All Products</a>
+          <a href="banknotes-brick.html">Brick</a>
+          <a href="banknotes-bundle.html">Bundle</a>
+          <a href="banknotes.html">Country Set</a>
+		  <a href="banknote.html">Banknotes</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>CURRENCY COLLECTION MARKET</h1>
+    <p>Banknotes</p>
+<div class="card-container">
+      <div class="card">
+        <div class="carousel">
+          <img src="img.jpg" alt="Resim 1">
+          <img src="imgg.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün A</span>
+        <span class="price">₺199</span>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="img.jpg" alt="Resim 1">
+          <img src="imgg.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün B</span>
+        <span class="price">$2.49</span>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="imgg.jpg" alt="Resim 1">
+          <img src="img.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün C</span>
+        <span class="price">€1.49</span>
+      </div>
+    </div>
+	 <div class="card-container">
+      <div class="card">
+        <div class="carousel">
+          <img src="imagess/557.jpg" alt="Resim 1">
+          <img src="imgg.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün d</span>
+        <span class="price">₺199</span>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="imagess/558.jpg" alt="Resim 1">
+          <img src="imgg.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün e</span>
+        <span class="price">$2.49</span>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="imagess/559.jpg" alt="Resim 1">
+          <img src="imagess/560.jpg" alt="Resim 2">
+        </div>
+        <span class="title">Ürün f</span>
+        <span class="price">€1.49</span>
+      </div>
+    </div>
+
+  </main>
+
+<a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<footer style="background-color: #111; color: #f8f9fa; padding: 30px 0;">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4 mb-3">
+        <h5 style="color: #ffcc00;">Contact</h5>
+        <p><strong style="color: #ffcc00;">Telephone:</strong><br> (+90) 0536 053 67 44</p>
+        <p><strong style="color: #ffcc00;">E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5 style="color: #ffcc00;">Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none" style="color: #ffcc00;">Home</a></li>
+          <li><a href="aboutus.html" class="text-decoration-none" style="color: #ffcc00;">About us</a></li>
+          <li><a href="contact.html" class="text-decoration-none" style="color: #ffcc00;">Contact</a></li>
+		     <li><a href="faqs.html" class="text-decoration-none" style="color: #ffcc00;">FAQs</a></li>
+		     <li><a href="policies.html" class="text-decoration-none" style="color: #ffcc00;">Policies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <p>© 2025 CurrencyCollectionMarket.</p>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <span style="color: #f8f9fa;"><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
+      <span style="color: #f8f9fa;"><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
