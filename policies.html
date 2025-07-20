@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Policies</title>
-    <style>
-        /* Genel Ayarlar */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CURRENCY COLLECTION MARKET</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+
+  <style>
+    /* Genel sıfırlama */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+     body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Siyah arka plan */
+            color: #fff; /* Beyaz yazı */
+        }
+	 body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('https://iasbh.tmgrup.com.tr/2ce8f5/0/0/0/0/0/0?u=http://i.sabah.com.tr/sb/fotohaber/ekonomi/ulkelerin-para-birimleri/2.jpg&mw=600'); /* Buraya istediğiniz arka plan resminin URL'sini ekleyin */
+                background-size: cover;
+                background-position: center;
+                filter:  grayscale(50%) opacity(35%); /* Flu etki */
+                z-index: -1; /* Arka plana yerleştirmek için */
+            }
+    header {
+      background-color: #000;
+      color: #FFD700;
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      gap: 15px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFD700;
+      stroke: #FFD700;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    main h1 {
+      font-size: 3rem;
+      color: #000;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    main p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 500px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      width: 100%;
+      background-color: #000;
+      color: #FFD700;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+      color: #e6c200;
+    }
+
+  
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;           /* İkon boyutu */
+  width: 56px;               /* Buton genişliği */
+  height: 56px;              /* Buton yüksekliği */
+  border-radius: 50%;        /* Yuvarlak yapmak için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+.contact-info {
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.contact-heading {
+  color: #ffcc00;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.label {
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+.info-text {
+  color: white;
+  font-weight: 600;
+}
+    /* Genel Ayarlar */
         body {
           font-family: Arial, sans-serif;
           margin: 0;
@@ -14,23 +167,38 @@
           color: #fff; /* Beyaz yazı */
         }
 
-        /* Header */
-        header {
+       
+        /* Ana İçerik */
+        main {
+          max-width: 800px;
+          margin: 30px auto;
+          padding: 20px;
+          background-color: #222; /* Siyahın hafif tonu */
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        main h2 {
+          color: #ffd700; /* Sarı başlıklar */
+          margin-bottom: 15px;
           text-align: center;
-          background-color: #ffd700; /* Sarı arka plan */
-          color: #000; /* Siyah yazı */
-          padding: 20px 0;
-          border-bottom: 4px solid #000;
         }
 
-        header h1 {
-          font-size: 2.5em;
+        main .faq {
+          margin-bottom: 20px;
+        }
+
+        main .faq h3 {
+          font-size: 1.2em;
+          color: #ffd700; /* Sarı başlık */
+          margin-bottom: 5px;
+        }
+
+        main .faq p {
+          font-size: 1em;
+          color: #ddd; /* Açık gri yazı */
+          line-height: 1.6;
           margin: 0;
-        }
-
-        header p {
-          font-size: 1.1em;
-          margin: 5px 0 0;
         }
 
         /* Ana İçerik */
@@ -106,5 +274,41 @@
         </ul>
     </main>
 
+<a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<footer style="background-color: #111; color: #f8f9fa; padding: 30px 0;">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4 mb-3">
+        <h5 style="color: #ffcc00;">Contact</h5>
+        <p><strong style="color: #ffcc00;">Telephone:</strong><br> (+90) 0536 053 67 44</p>
+        <p><strong style="color: #ffcc00;">E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5 style="color: #ffcc00;">Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none" style="color: #ffcc00;">Home</a></li>
+          <li><a href="aboutus.html" class="text-decoration-none" style="color: #ffcc00;">About us</a></li>
+          <li><a href="contact.html" class="text-decoration-none" style="color: #ffcc00;">Contact</a></li>
+		     <li><a href="faqs.html" class="text-decoration-none" style="color: #ffcc00;">FAQs</a></li>
+		     <li><a href="policies.html" class="text-decoration-none" style="color: #ffcc00;">Policies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <p>© 2025 CurrencyCollectionMarket.</p>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <span style="color: #f8f9fa;"><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
+      <span style="color: #f8f9fa;"><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
+    </div>
+  </div>
+</footer>
+  <!-- Bootstrap JS Bundle CDN (Opsiyonel, bazı Bootstrap bileşenleri için) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
