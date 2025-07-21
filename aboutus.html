@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CURRENCY COLLECTION MARKET - About Us</title>
-  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* Reset */
+    /* Genel sıfırlama */
     * {
       margin: 0;
       padding: 0;
@@ -27,6 +25,7 @@
       background-color: #000;
       color: #fff;
       min-height: 100vh;
+      position: relative;
     }
 
     body::before {
@@ -40,7 +39,7 @@
       filter: grayscale(50%) opacity(35%);
       z-index: -1;
     }
-    /* HEADER */
+
     header {
       background-color: #000;
       color: #FFD700;
@@ -72,7 +71,7 @@
       letter-spacing: 1px;
     }
 
-    .header-menu {
+    nav {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -80,9 +79,8 @@
       align-items: center;
     }
 
-    /* Menü link ve buton stilleri burada */
-    .header-menu a,
-    .header-menu button.dropbtn {
+    nav a,
+    .dropbtn {
       color: #000;
       background-color: #FFD700;
       text-decoration: none;
@@ -93,11 +91,10 @@
       cursor: pointer;
       font-size: 0.95rem;
       transition: background-color 0.3s;
-      display: inline-block;
     }
 
-    .header-menu a:hover,
-    .header-menu button.dropbtn:hover {
+    nav a:hover,
+    .dropbtn:hover {
       background-color: #e6c200;
     }
 
@@ -109,7 +106,7 @@
       display: none;
       position: absolute;
       right: 0;
-      background-color: #fff;
+      background-color: #FFD700;
       min-width: 160px;
       z-index: 1;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
@@ -122,66 +119,69 @@
       padding: 10px 16px;
       text-decoration: none;
       display: block;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
+      background-color: #FFD700;
+      border-bottom: 1px solid #e6c200;
+      transition: background-color 0.3s;
     }
 
     .dropdown-content a:hover {
-      background-color: #f1f1f1;
+      background-color: #e6c200;
+      color: #000;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-
-    /* MAIN */
     main {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: rgba(34, 34, 34, 0.85);
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+      max-width: 900px;
+      margin: 40px auto 60px;
+      background-color: rgba(34, 34, 34, 0.9);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
       color: #fff;
       line-height: 1.6;
+      font-size: 1.05rem;
     }
 
     main h1 {
-      color: #ffcc00;
+      color: #FFD700;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 3px;
       text-align: center;
-      margin-bottom: 15px;
-      font-size: 2.8rem;
     }
 
     main h2 {
       color: #ffd700;
       margin-top: 30px;
       margin-bottom: 15px;
-      text-align: center;
+      font-weight: 600;
     }
 
     main p {
-      font-size: 1.1rem;
       color: #ddd;
+      margin-bottom: 20px;
     }
 
-    main section {
-      margin-top: 30px;
-      padding: 20px;
+    main section.mission,
+    main section.vision {
       background-color: #222;
-      border: 2px solid #ffd700;
-      border-radius: 6px;
+      border: 2px solid #FFD700;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin-top: 30px;
     }
 
-    main section h3 {
-      margin-bottom: 10px;
-      color: #ffd700;
+    main section.mission h3,
+    main section.vision h3 {
+      color: #FFD700;
+      margin-bottom: 12px;
     }
 
-    /* WHATSAPP BUTTON */
+    /* Whatsapp button */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -205,7 +205,7 @@
       transform: scale(1.1);
     }
 
-    /* FOOTER */
+    /* Footer */
     footer {
       background-color: #111;
       color: #f8f9fa;
@@ -213,6 +213,8 @@
     }
 
     footer .container {
+      max-width: 1140px;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -224,7 +226,6 @@
     footer a {
       color: #ffcc00;
       text-decoration: none;
-      font-weight: 600;
       transition: color 0.3s;
     }
 
@@ -235,97 +236,136 @@
 
     footer .d-flex span {
       color: #f8f9fa;
+      font-size: 0.9rem;
+      margin: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        margin: 30px 15px 50px;
+      }
+      main h1 {
+        font-size: 2.2rem;
+      }
+      nav a, .dropbtn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        margin: 20px 10px 40px;
+        padding: 15px 15px;
+      }
+      main h1 {
+        font-size: 1.8rem;
+      }
+      nav a, .dropbtn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+      }
+      footer .d-flex {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
 
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo" aria-label="Currency Exchange Logo">
-      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <circle cx="32" cy="32" r="30" stroke-width="4" />
-        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
-        <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
-      </svg>
-      <span class="logo-text">CURRENCY COLLECTION MARKET</span>
-    </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="aboutus.html">About Us</a>
-      <a href="contact.html">Contact</a>
+<header>
+  <div class="logo" aria-label="Currency Exchange Logo">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <circle cx="32" cy="32" r="30" stroke-width="4" />
+      <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+      <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
+    </svg>
+    <span class="logo-text">CURRENCY COLLECTION MARKET</span>
+  </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Products ▾</button>
-        <div class="dropdown-content">
-          <a href="allproducts.html">All Products</a>
-          <a href="banknotes-brick.html">Bricks</a>
-          <a href="banknotes-bundle.html">Bundles</a>
-          <a href="banknotes.html">Country Set</a>
-          <a href="banknote.html">Banknotes</a>
-        </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Products ▾</button>
+      <div class="dropdown-content">
+        <a href="allproducts.html">All Products</a>
+        <a href="banknotes-brick.html">Bricks</a>
+        <a href="banknotes-bundle.html">Bundles</a>
+        <a href="banknotes.html">Banknotes</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
-  <main>
-    <h1>About Us</h1>
-    <p>We aim to keep alive and expand the money culture and collection all over the world.</p>
+<main>
+  <h1>About Us</h1>
+  <p>We aim to keep alive and expand the money culture and collection all over the world.</p>
 
-    <h2>Who Are We?</h2>
+  <h2>Who Are We?</h2>
+  <p>
+    We are a community that values ​​numismatics and banknote collecting. We have been organizing organizations around this idea for years and, as the Babil auction family, we have successfully completed many international auctions. We still carry out cultural and commercial activities in the field of auctioneering.
+  </p>
+
+  <section class="mission">
+    <h3>Our Mission</h3>
     <p>
-      We are a community that values numismatics and banknote collecting. We have been organizing organizations around this idea for years and, as the Babil auction family, we have successfully completed many international auctions. We still carry out cultural and commercial activities in the field of auctioneering.
+      To ensure that the culture and values ​​in this field continue to live by bringing together various world currencies and old banknotes with the right owners, that is, you, valuable collectors and value investors.
     </p>
+  </section>
 
-    <section class="mission">
-      <h3>Our Mission</h3>
-      <p>
-        To ensure that the culture and values in this field continue to live by bringing together various world currencies and old banknotes with the right owners, that is, you, valuable collectors and value investors.
-      </p>
-    </section>
+  <section class="vision">
+    <h3>Our Vision</h3>
+    <p>
+      In addition to being a reliable auction platform on a global scale, while bringing you different types of banknotes, we aim to expand our activities every day and carry the values ​​of the past and present more strongly into the future.
+    </p>
+  </section>
+</main>
 
-    <section class="vision">
-      <h3>Our Vision</h3>
-      <p>
-        In addition to being a reliable auction platform on a global scale, while bringing you different types of banknotes, we aim to expand our activities every day and carry the values of the past and present more strongly into the future.
-      </p>
-    </section>
-  </main>
+<a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-  <a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button" aria-label="WhatsApp Contact">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <footer>
-    <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-md-4 mb-3">
-          <h5>Contact</h5>
-          <p><strong>Telephone:</strong><br> (+90) 0536 053 67 44</p>
-          <p><strong>E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <h5>Pages</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="policies.html">Policies</a></li>
-          </ul>
-        </div>
+<footer>
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4 mb-3">
+        <h5>Contact</h5>
+        <p><strong>Telephone:</strong><br> (+90) 0536 053 67 44</p>
+        <p><strong>E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
       </div>
 
-      <div class="mb-3">
-        <p>© 2025 CurrencyCollectionMarket.</p>
-      </div>
-
-      <div class="d-flex justify-content-center gap-3">
-        <span><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
-        <span><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
+      <div class="col-md-4 mb-3">
+        <h5>Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="policies.html">Policies</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+
+    <div class="mb-3">
+      <p>© 2025 CurrencyCollectionMarket.</p>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <span><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
+      <span><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
