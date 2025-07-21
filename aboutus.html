@@ -6,11 +6,10 @@
   <title>CURRENCY COLLECTION MARKET</title>
   <link rel="stylesheet" href="style.css">
   <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
   <style>
     /* Genel sıfırlama */
@@ -21,10 +20,27 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background: #fff;
-      color: #222;
+      background: #000;
+      color: #fff;
       min-height: 100vh;
+      position: relative;
+      font-family: Arial, sans-serif;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://medyascope.tv/wp-content/uploads/2022/09/kralic%CC%A7e-elizabeth.jpeg');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(50%) opacity(35%);
+      z-index: -1;
+    }
+
     header {
       background-color: #000;
       color: #FFD700;
@@ -33,6 +49,7 @@
       padding: 15px 30px;
       gap: 15px;
     }
+
     .logo {
       display: flex;
       align-items: center;
@@ -41,253 +58,265 @@
       font-size: 1.4rem;
       letter-spacing: 1px;
       user-select: none;
+      color: #FFD700;
     }
+
     .logo svg {
       width: 32px;
       height: 32px;
       fill: #FFD700;
       stroke: #FFD700;
     }
-    main {
+
+    /* Menü */
+    nav.header-menu {
+      margin-left: auto;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
       align-items: center;
-      text-align: center;
-      padding: 30px 20px;
     }
+
+    nav.header-menu a,
+    nav.header-menu button.dropbtn {
+      color: #000;
+      background-color: #FFD700;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    nav.header-menu a:hover,
+    nav.header-menu button.dropbtn:hover {
+      background-color: #e6c200;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 160px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
     main h1 {
       font-size: 3rem;
-      color: #000;
+      color: #ffcc00;
       margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
+
+    main h2 {
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
     main p {
       font-size: 1.2rem;
-      color: #555;
-      max-width: 500px;
+      color: #ddd;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 20px;
     }
 
-  
-    /* FOOTER */
-    .site-footer {
-      width: 100%;
-      background-color: #000;
-      color: #FFD700;
-      padding: 20px 0;
-      text-align: center;
-      margin-top: 50px;
+    main .mission,
+    main .vision {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #333;
+      border: 2px solid #ffd700;
+      border-radius: 5px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+    main .mission h3,
+    main .vision h3 {
+      margin-bottom: 10px;
+      color: #ffd700;
     }
 
-    .site-footer a {
-      color: #FFD700;
+    /* Whatsapp button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 9999;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      margin: 0 8px;
-      font-weight: 600;
-      transition: color 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
     }
 
-    .site-footer a:hover {
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      color: #f8f9fa;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer h5 {
+      color: #ffcc00;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    footer a:hover {
       text-decoration: underline;
       color: #e6c200;
     }
 
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-  background-color: #25D366;
-  color: white;
-  font-size: 24px;           /* İkon boyutu */
-  width: 56px;               /* Buton genişliği */
-  height: 56px;              /* Buton yüksekliği */
-  border-radius: 50%;        /* Yuvarlak yapmak için */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.1);
-}
-  /* Genel Ayarlar */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* Siyah arka plan */
-            color: #fff; /* Beyaz yazı */
-        }
-
-            body::before {
-                content: "";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('https://medyascope.tv/wp-content/uploads/2022/09/kralic%CC%A7e-elizabeth.jpeg'); /* Buraya istediğiniz arka plan resminin URL'sini ekleyin */
-                background-size: cover;
-                background-position: center;
-                filter:  grayscale(50%) opacity(35%); /* Flu etki */
-                z-index: -1; /* Arka plana yerleştirmek için */
-            }
-
-        /* Header */
-      
-
-            header h1 {
-                font-size: 2.5em;
-                margin: 0;
-            }
-
-            header p {
-                font-size: 1.2em;
-                margin: 5px 0 0;
-            }
-
-        /* Ana İçerik */
-        main {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #222; /* Siyahın hafif tonu */
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-            main h2 {
-                color: #ffd700; /* Sarı başlıklar */
-                margin-bottom: 20px;
-                text-align: center;
-            }
-
-            main p {
-                font-size: 1.1em;
-                color: #ddd; /* Açık gri içerik */
-                line-height: 1.6;
-            }
-
-            main .mission,
-            main .vision {
-                margin-top: 30px;
-                padding: 20px;
-                background-color: #333; /* Daha açık siyah */
-                border: 2px solid #ffd700; /* Sarı kenarlık */
-                border-radius: 5px;
-            }
-
-                main .mission h3,
-                main .vision h3 {
-                    margin-bottom: 10px;
-                    color: #ffd700; /* Sarı başlıklar */
-                }
-
+    footer .d-flex span {
+      color: #f8f9fa;
+    }
   </style>
 </head>
 <body>
- <header>
-  <div class="logo" aria-label="Currency Exchange Logo">
-    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <circle cx="32" cy="32" r="30" stroke-width="4" />
-      <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
-      <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
-    </svg>
-    <span class="logo-text">CURRENCY COLLECTION MARKET</span>
-  </div>
+  <header>
+    <div class="logo" aria-label="Currency Exchange Logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" stroke-width="4" />
+        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+        <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
+      </svg>
+      <span class="logo-text">CURRENCY COLLECTION MARKET</span>
+    </div>
 
-  <nav style="display: flex; flex-wrap: wrap; gap: 10px; margin-left: auto; align-items: center;">
-  <a href="index.html" style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">Home</a>
-  <a href="aboutus.html" style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">About Us</a>
-  <a href="contact.html" style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">Contact</a>
+    <nav class="header-menu">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
 
- <div style="position: relative;" onmouseover="this.children[1].style.display='block'" onmouseout="this.children[1].style.display='none'">
-  <button style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">Products ▾</button>
-  <div style="display: none; position: absolute; right: 0; background-color: #fff; min-width: 160px; z-index: 1; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); border-radius: 6px; overflow: hidden;">
-    <a href="allproducts.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">All Products</a>
-    <a href="banknotes-brick.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">Bricks</a>
-    <a href="banknotes-bundle.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">Bundles</a>
-    <a href="banknotes.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff;">Banknotes</a>
-  </div>
-</div>
+      <div class="dropdown">
+        <button class="dropbtn">Products ▾</button>
+        <div class="dropdown-content">
+          <a href="allproducts.html">All Products</a>
+          <a href="banknotes-brick.html">Bricks</a>
+          <a href="banknotes-bundle.html">Bundles</a>
+          <a href="banknotes.html">Banknotes</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-</nav>
-  
+  <main>
+    <h1>About Us</h1>
+    <p>We aim to keep alive and expand the money culture and collection all over the world.</p>
 
-</header>
+    <h2>Who Are We?</h2>
+    <p>
+      We are a community that values numismatics and banknote collecting. We have been organizing organizations around this idea for years and, as the Babil auction family, we have successfully completed many international auctions. We still carry out cultural and commercial activities in the field of auctioneering.
+    </p>
 
-      
+    <section class="mission">
+      <h3>Our Mission</h3>
+      <p>
+        To ensure that the culture and values in this field continue to live by bringing together various world currencies and old banknotes with the right owners, that is, you, valuable collectors and value investors.
+      </p>
+    </section>
 
-    <main>
-        <h1 style="color: #ffcc00;">About Us</h1>
-        <p>We aim to keep alive and expand the money culture and collection all over the world.</p>
- 
-        <h2>Who Are We?</h2>
-        <p>
-            We are a community that values ​​numismatics and banknote collecting. We have been organizing organizations around this idea for years and, as the Babil auction family, we have successfully completed many international auctions. We still carry out cultural and commercial activities in the field of auctioneering.
-        </p>
-
-        <section class="mission">
-            <h3>Our Mission</h3>
-            <p>
-                To ensure that the culture and values ​​in this field continue to live by bringing together various world currencies and old banknotes with the right owners, that is, you, valuable collectors and value investors.
-            </p>
-        </section>
-
-        <section class="vision">
-            <h3>Our Vision</h3>
-            <p>
-                In addition to being a reliable auction platform on a global scale, while bringing you different types of banknotes, we aim to expand our activities every day and carry the values ​​of the past and present more strongly into the future. </p>
-        </section>
-
-
+    <section class="vision">
+      <h3>Our Vision</h3>
+      <p>
+        In addition to being a reliable auction platform on a global scale, while bringing you different types of banknotes, we aim to expand our activities every day and carry the values of the past and present more strongly into the future.
+      </p>
+    </section>
   </main>
 
-<a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
-  <i class="fab fa-whatsapp"></i>
-</a>
-<footer style="background-color: #111; color: #f8f9fa; padding: 30px 0;">
-  <div class="container text-center">
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-4 mb-3">
-        <h5 style="color: #ffcc00;">Contact</h5>
-        <p><strong style="color: #ffcc00;">Telephone:</strong><br> (+90) 0536 053 67 44</p>
-        <p><strong style="color: #ffcc00;">E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+  <a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <div class="container text-center">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-4 mb-3">
+          <h5>Contact</h5>
+          <p><strong>Telephone:</strong><br> (+90) 0536 053 67 44</p>
+          <p><strong>E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h5>Pages</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="policies.html">Policies</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="col-md-4 mb-3">
-        <h5 style="color: #ffcc00;">Pages</h5>
-        <ul class="list-unstyled">
-          <li><a href="index.html" class="text-decoration-none" style="color: #ffcc00;">Home</a></li>
-          <li><a href="aboutus.html" class="text-decoration-none" style="color: #ffcc00;">About us</a></li>
-          <li><a href="contact.html" class="text-decoration-none" style="color: #ffcc00;">Contact</a></li>
-		     <li><a href="faqs.html" class="text-decoration-none" style="color: #ffcc00;">FAQs</a></li>
-		     <li><a href="policies.html" class="text-decoration-none" style="color: #ffcc00;">Policies</a></li>
-        </ul>
+      <div class="mb-3">
+        <p>© 2025 CurrencyCollectionMarket.</p>
+      </div>
+
+      <div class="d-flex justify-content-center gap-3">
+        <span><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
+        <span><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
       </div>
     </div>
-
-    <div class="mb-3">
-      <p>© 2025 CurrencyCollectionMarket.</p>
-    </div>
-
-    <div class="d-flex justify-content-center gap-3">
-      <span style="color: #f8f9fa;"><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
-      <span style="color: #f8f9fa;"><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
