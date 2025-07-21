@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CURRENCY COLLECTION MARKET</title>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <style>
+    /* Genel sıfırlama */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +25,10 @@
       padding: 0;
       background-color: #000; /* Siyah arka plan */
       color: #fff; /* Beyaz yazı */
+      position: relative;
+      min-height: 100vh;
     }
+
     body::before {
       content: "";
       position: fixed;
@@ -63,26 +68,27 @@
       stroke: #FFD700;
     }
 
-    .logo-text {
+    .logo span {
       font-size: 1.1rem;
       color: #FFD700;
       font-weight: 600;
       letter-spacing: 1px;
     }
 
-    .header-menu {
+    nav {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-left: auto;
       align-items: center;
     }
 
-    .header-menu a,
-    .dropbtn {
+    nav a,
+    nav button {
       color: #000;
       background-color: #FFD700;
       text-decoration: none;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 6px;
       font-weight: bold;
       border: none;
@@ -91,16 +97,16 @@
       transition: background-color 0.3s;
     }
 
-    .header-menu a:hover,
-    .dropbtn:hover {
+    nav a:hover,
+    nav button:hover {
       background-color: #e6c200;
     }
 
-    .dropdown {
+    nav .dropdown {
       position: relative;
     }
 
-    .dropdown-content {
+    nav .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
@@ -112,7 +118,7 @@
       overflow: hidden;
     }
 
-    .dropdown-content a {
+    nav .dropdown-content a {
       color: #000;
       padding: 10px 16px;
       text-decoration: none;
@@ -121,11 +127,11 @@
       border-bottom: 1px solid #ddd;
     }
 
-    .dropdown-content a:hover {
+    nav .dropdown-content a:hover {
       background-color: #f1f1f1;
     }
 
-    .dropdown:hover .dropdown-content {
+    nav .dropdown:hover .dropdown-content {
       display: block;
     }
 
@@ -141,7 +147,7 @@
 
     main h1 {
       font-size: 2.5rem;
-      color: #000;
+      color: #fff;
       margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -149,19 +155,39 @@
 
     main p {
       font-size: 1.2rem;
-      color: #555;
+      color: #ddd;
       max-width: 500px;
-      margin-bottom: 30px;
     }
 
-    /* Cards */
+    /* WHATSAPP BUTTON */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 9999;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
     .card-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
     .card {
@@ -182,7 +208,6 @@
       scroll-snap-type: x mandatory;
       gap: 10px;
       margin-bottom: 1em;
-      -webkit-overflow-scrolling: touch;
     }
 
     .carousel img {
@@ -230,13 +255,28 @@
       opacity: 1;
     }
 
+    @media (max-width: 600px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 95%;
+      }
+    }
+
     /* FOOTER */
     footer {
       background-color: #111;
       color: #f8f9fa;
       padding: 30px 0;
+    }
+
+    footer .container {
+      max-width: 1140px;
+      margin: 0 auto;
       text-align: center;
-      margin-top: 50px;
     }
 
     footer h5 {
@@ -255,95 +295,76 @@
       text-decoration: underline;
     }
 
-    .d-flex.justify-content-center.gap-3 span {
+    footer .d-flex {
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    footer .d-flex span {
       color: #f8f9fa;
-      display: flex;
+      font-size: 0.9rem;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    /* RESPONSIVE */
+    /* Responsive */
     @media (max-width: 768px) {
-      main h1 {
-        font-size: 2rem;
+      main {
+        padding: 20px;
+        margin: 30px 15px 50px;
       }
-
-      .header-menu {
-        justify-content: center;
-        flex: 1 1 100%;
-        margin-top: 10px;
+      nav a, nav button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
       }
-    }
-
-    @media (max-width: 600px) {
-      .card-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .card {
-        width: 95%;
+      .logo span {
+        font-size: 1rem;
       }
     }
 
     @media (max-width: 480px) {
-      .logo-text {
-        font-size: 0.9rem;
+      main {
+        margin: 20px 10px 40px;
+        padding: 15px 15px;
       }
-
-      .header-menu a, .dropbtn {
-        font-size: 0.8rem;
+      nav a, nav button {
         padding: 6px 10px;
+        font-size: 0.85rem;
       }
-    }
-
-    /* WhatsApp Button */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 9999;
-      background-color: #25D366;
-      color: white;
-      font-size: 24px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .whatsapp-button:hover {
-      transform: scale(1.1);
+      footer .d-flex {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- HEADER -->
   <header>
     <div class="logo" aria-label="Currency Exchange Logo">
       <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
         <circle cx="32" cy="32" r="30" stroke-width="4" />
-        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+        <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round" />
         <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
       </svg>
-      <span class="logo-text">CURRENCY COLLECTION MARKET</span>
+      <span>CURRENCY COLLECTION MARKET</span>
     </div>
 
-    <nav class="header-menu">
+    <nav>
       <a href="index.html">Home</a>
       <a href="aboutus.html">About Us</a>
       <a href="contact.html">Contact</a>
+
       <div class="dropdown">
         <button class="dropbtn">Products ▾</button>
         <div class="dropdown-content">
           <a href="allproducts.html">All Products</a>
-          <a href="banknotes-brick.html">Brick</a>
-          <a href="banknotes-bundle.html">Bundle</a>
+          <a href="banknotes-brick.html">Bricks</a>
+          <a href="banknotes-bundle.html">Bundles</a>
           <a href="banknotes.html">Country Set</a>
           <a href="banknote.html">Banknotes</a>
         </div>
@@ -351,9 +372,11 @@
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main>
     <h1>CURRENCY COLLECTION MARKET</h1>
     <p>BRICK</p>
+
     <div class="card-container">
       <div class="card">
         <div class="carousel">
@@ -413,17 +436,24 @@
     </div>
   </main>
 
-  <a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button" aria-label="WhatsApp ile iletişime geç">
+  <!-- WHATSAPP BUTTON -->
+  <a
+    href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum"
+    target="_blank"
+    class="whatsapp-button"
+    aria-label="WhatsApp"
+  >
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="container text-center">
+    <div class="container">
       <div class="row justify-content-center mb-4">
         <div class="col-md-4 mb-3">
           <h5>Contact</h5>
-          <p><strong>Telephone:</strong><br> (+90) 0536 053 67 44</p>
-          <p><strong>E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+          <p><strong>Telephone:</strong><br /> (+90) 0536 053 67 44</p>
+          <p><strong>E-mail:</strong><br /> currencycollectionmarket@gmail.com</p>
         </div>
 
         <div class="col-md-4 mb-3">
@@ -438,9 +468,7 @@
         </div>
       </div>
 
-      <div class="mb-3">
-        <p>© 2025 CurrencyCollectionMarket.</p>
-      </div>
+      <p>© 2025 CurrencyCollectionMarket.</p>
 
       <div class="d-flex justify-content-center gap-3">
         <span><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
@@ -449,5 +477,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
