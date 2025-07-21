@@ -11,25 +11,27 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
   <style>
+    /* Genel sıfırlama */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
+      min-height: 100vh;
+      position: relative;
     }
 
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-image: url('https://iasbh.tmgrup.com.tr/2ce8f5/0/0/0/0/0/0?u=http://i.sabah.com.tr/sb/fotohaber/ekonomi/ulkelerin-para-birimleri/2.jpg&mw=600');
       background-size: cover;
       background-position: center;
@@ -37,27 +39,36 @@
       z-index: -1;
     }
 
+    /* HEADER */
     header {
       background-color: #000;
       color: #FFD700;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      padding: 15px 30px;
+      justify-content: space-between;
+      padding: 15px 20px;
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
+      flex: 1;
     }
 
     .logo svg {
       width: 32px;
       height: 32px;
       fill: #FFD700;
+      stroke: #FFD700;
+    }
+
+    .logo span {
+      font-size: 1.1rem;
+      color: #FFD700;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
     nav {
@@ -65,19 +76,26 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-left: auto;
+      align-items: center;
     }
 
     nav a,
     nav button {
-      background-color: #FFD700;
       color: #000;
-      padding: 10px 16px;
+      background-color: #FFD700;
       text-decoration: none;
+      padding: 10px 16px;
       border-radius: 6px;
       font-weight: bold;
-      font-size: 0.95rem;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover,
+    nav button:hover {
+      background-color: #e6c200;
     }
 
     nav .dropdown {
@@ -103,15 +121,30 @@
       display: block;
       text-decoration: none;
       border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s;
+    }
+
+    nav .dropdown-content a:hover {
+      background-color: #f0f0f0;
+      color: #000;
     }
 
     nav .dropdown:hover .dropdown-content {
       display: block;
     }
 
+    /* MAIN */
     main {
       padding: 40px 20px;
       text-align: center;
+      max-width: 900px;
+      margin: 40px auto 60px;
+      background-color: rgba(34, 34, 34, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      color: #fff;
+      line-height: 1.6;
+      font-size: 1.05rem;
     }
 
     .contact-heading {
@@ -134,26 +167,11 @@
       border: 0;
       border-radius: 8px;
       margin-top: 20px;
+      width: 100%;
+      height: 350px;
     }
 
-    .site-footer {
-      background-color: #111;
-      color: #f8f9fa;
-      padding: 30px 0;
-      text-align: center;
-    }
-
-    .site-footer a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: 600;
-    }
-
-    .site-footer a:hover {
-      text-decoration: underline;
-    }
-
+    /* WHATSAPP BUTTON */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -176,6 +194,80 @@
     .whatsapp-button:hover {
       transform: scale(1.1);
     }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #f8f9fa;
+      padding: 30px 0;
+    }
+
+    footer .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    footer h5 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #e6c200;
+      text-decoration: underline;
+    }
+
+    footer .d-flex {
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    footer .d-flex span {
+      color: #f8f9fa;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        margin: 30px 15px 50px;
+      }
+      nav a, nav button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+      .logo span {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        margin: 20px 10px 40px;
+        padding: 15px 15px;
+      }
+      nav a, nav button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+      }
+      footer .d-flex {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 
@@ -183,8 +275,8 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">
-      <svg viewBox="0 0 64 64">
+    <div class="logo" aria-label="Currency Exchange Logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
         <circle cx="32" cy="32" r="30" stroke-width="4" />
         <path d="M20 24h24M20 32h24M20 40h24" stroke="#FFD700" stroke-width="4" stroke-linecap="round" />
         <text x="32" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold" font-family="Arial">$</text>
@@ -196,8 +288,9 @@
       <a href="index.html">Home</a>
       <a href="aboutus.html">About Us</a>
       <a href="contact.html">Contact</a>
+
       <div class="dropdown">
-        <button>Products ▾</button>
+        <button class="dropbtn">Products ▾</button>
         <div class="dropdown-content">
           <a href="allproducts.html">All Products</a>
           <a href="banknotes-brick.html">Bricks</a>
@@ -209,7 +302,7 @@
   </header>
 
   <!-- MAIN -->
-  <main class="container">
+  <main>
     <div class="contact-section">
       <h2 class="contact-heading">Contact Us</h2>
       <p><span class="label">Telephone:</span> <span class="info-text">(+90) 0536 053 67 44</span></p>
@@ -220,26 +313,26 @@
       <h4 class="mt-4">Where are we?</h4>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.4456799575983!2d29.024968899999994!3d40.9936174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab869ae32405d%3A0xcacba9bb3c74311b!2zRGVyeWEgxLDFnyBNZXJrZXpp!5e0!3m2!1str!2str!4v1734119304081!5m2!1str!2str"
-        width="100%" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </main>
 
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
+  <a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer>
     <div class="container">
       <div class="row justify-content-center mb-4">
         <div class="col-md-4 mb-3">
-          <h5 style="color: #ffcc00;">Contact</h5>
+          <h5>Contact</h5>
           <p><strong>Telephone:</strong><br> (+90) 0536 053 67 44</p>
           <p><strong>E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
         </div>
         <div class="col-md-4 mb-3">
-          <h5 style="color: #ffcc00;">Pages</h5>
+          <h5>Pages</h5>
           <ul class="list-unstyled">
             <li><a href="index.html">Home</a></li>
             <li><a href="aboutus.html">About us</a></li>
@@ -250,7 +343,7 @@
         </div>
       </div>
       <p>© 2025 CurrencyCollectionMarket.</p>
-      <div class="d-flex justify-content-center gap-3">
+      <div class="d-flex">
         <span><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
         <span><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
       </div>
