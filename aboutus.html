@@ -46,20 +46,17 @@
       background-color: #000;
       color: #FFD700;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      padding: 15px 30px;
-      gap: 15px;
+      justify-content: space-between;
+      padding: 15px 20px;
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-      user-select: none;
-      color: #FFD700;
+      flex: 1;
     }
 
     .logo svg {
@@ -69,8 +66,14 @@
       stroke: #FFD700;
     }
 
-    /* NAVIGATION */
-    nav {
+    .logo-text {
+      font-size: 1.1rem;
+      color: #FFD700;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .header-menu {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -78,8 +81,9 @@
       align-items: center;
     }
 
-    nav a,
-    nav button.dropbtn {
+    /* Menü link ve buton stilleri burada */
+    .header-menu a,
+    .header-menu button.dropbtn {
       color: #000;
       background-color: #FFD700;
       text-decoration: none;
@@ -90,32 +94,30 @@
       cursor: pointer;
       font-size: 0.95rem;
       transition: background-color 0.3s;
+      display: inline-block;
     }
 
-    nav a:hover,
-    nav button.dropbtn:hover {
+    .header-menu a:hover,
+    .header-menu button.dropbtn:hover {
       background-color: #e6c200;
     }
 
-    /* Dropdown container */
     .dropdown {
       position: relative;
     }
 
-    /* Dropdown menu */
     .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
       background-color: #fff;
       min-width: 160px;
-      z-index: 10;
+      z-index: 1;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       border-radius: 6px;
       overflow: hidden;
     }
 
-    /* Dropdown links */
     .dropdown-content a {
       color: #000;
       padding: 10px 16px;
@@ -123,20 +125,15 @@
       display: block;
       background-color: #fff;
       border-bottom: 1px solid #ddd;
-      transition: background-color 0.2s;
-    }
-
-    .dropdown-content a:last-child {
-      border-bottom: none;
     }
 
     .dropdown-content a:hover {
       background-color: #f1f1f1;
     }
 
-    /* Show dropdown on hover */
     .dropdown:hover .dropdown-content {
       display: block;
+    
     }
 
     /* MAIN */
