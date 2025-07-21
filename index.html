@@ -11,7 +11,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 
-
   <style>
     * {
       margin: 0;
@@ -21,25 +20,25 @@
     }
 
     body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* Siyah arka plan */
-            color: #fff; /* Beyaz yazı */
-        }
-	 body::before {
-                content: "";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('https://www.duvargiydir.com/media/catalog/product/h/m/hmap0098-harita-duvar-kagidi-ev-dekorasyon-piri-reis-haritasi.jpg'); /* Buraya istediğiniz arka plan resminin URL'sini ekleyin */
-                background-size: cover;
-                background-position: center;
-                filter:  grayscale(40%) opacity(25%); /* Flu etki */
-                z-index: -1; /* Arka plana yerleştirmek için */
-            }
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* Siyah arka plan */
+      color: #fff; /* Beyaz yazı */
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.duvargiydir.com/media/catalog/product/h/m/hmap0098-harita-duvar-kagidi-ev-dekorasyon-piri-reis-haritasi.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(40%) opacity(25%);
+      z-index: -1;
+    }
 
     /* HEADER */
     header {
@@ -77,24 +76,28 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-left: auto;
+      align-items: center;
     }
 
+    /* Menü link ve buton stilleri burada */
     .header-menu a,
-    .dropbtn {
+    .header-menu button.dropbtn {
       color: #000;
       background-color: #FFD700;
       text-decoration: none;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 6px;
       font-weight: bold;
       border: none;
       cursor: pointer;
       font-size: 0.95rem;
       transition: background-color 0.3s;
+      display: inline-block;
     }
 
     .header-menu a:hover,
-    .dropbtn:hover {
+    .header-menu button.dropbtn:hover {
       background-color: #e6c200;
     }
 
@@ -189,8 +192,6 @@
       100% { transform: translateX(0%); }
     }
 
-    
-
     /* RESPONSIVE */
     @media (max-width: 768px) {
       main h1 {
@@ -217,33 +218,36 @@
         font-size: 0.9rem;
       }
 
-      .header-menu a, .dropbtn {
+      .header-menu a,
+      .header-menu button.dropbtn {
         font-size: 0.8rem;
         padding: 6px 10px;
       }
     }
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-  background-color: #25D366;
-  color: white;
-  font-size: 24px;           /* İkon boyutu */
-  width: 56px;               /* Buton genişliği */
-  height: 56px;              /* Buton yüksekliği */
-  border-radius: 50%;        /* Yuvarlak yapmak için */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
-}
 
-.whatsapp-button:hover {
-  transform: scale(1.1);
-}
+    /* Whatsapp button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 9999;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -257,23 +261,22 @@
       <span class="logo-text">CURRENCY COLLECTION MARKET</span>
     </div>
 
-    <nav style="display: flex; flex-wrap: wrap; gap: 10px; margin-left: auto; align-items: center;">
-  <a href="index.html" style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">Home</a>
-  <a href="aboutus.html" style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">About Us</a>
-  <a href="contact.html" style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">Contact</a>
+    <nav class="header-menu">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
 
- <div style="position: relative;" onmouseover="this.children[1].style.display='block'" onmouseout="this.children[1].style.display='none'">
-  <button style="color: #000; background-color: #FFD700; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 0.95rem; transition: background-color 0.3s;">Products ▾</button>
-  <div style="display: none; position: absolute; right: 0; background-color: #fff; min-width: 160px; z-index: 1; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); border-radius: 6px; overflow: hidden;">
-    <a href="allproducts.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">All Products</a>
-    <a href="banknotes-brick.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">Bricks</a>
-    <a href="banknotes-bundle.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">Bundles</a>
-    <a href="banknotes.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff; border-bottom: 1px solid #ddd;">Country Set</a>
-	 <a href="banknote.html" style="color: #000; padding: 10px 16px; text-decoration: none; display: block; background-color: #fff;">Banknotes</a>
-  </div>
-</div>
-
-</nav>
+      <div class="dropdown">
+        <button class="dropbtn">Products ▾</button>
+        <div class="dropdown-content">
+          <a href="allproducts.html">All Products</a>
+          <a href="banknotes-brick.html">Bricks</a>
+          <a href="banknotes-bundle.html">Bundles</a>
+          <a href="banknotes.html">Country Set</a>
+          <a href="banknote.html">Banknotes</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -288,41 +291,41 @@
       </div>
     </div>
   </main>
-<a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
-  <i class="fab fa-whatsapp"></i>
-</a>
-<footer style="background-color: #111; color: #f8f9fa; padding: 30px 0;">
-  <div class="container text-center">
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-4 mb-3">
-        <h5 style="color: #ffcc00;">Contact</h5>
-        <p><strong style="color: #ffcc00;">Telephone:</strong><br> (+90) 0536 053 67 44</p>
-        <p><strong style="color: #ffcc00;">E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+
+  <a href="https://wa.me/905360536744?text=Merhaba%2C%20websitenizden%20ulaşıyorum" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer style="background-color: #111; color: #f8f9fa; padding: 30px 0;">
+    <div class="container text-center">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-4 mb-3">
+          <h5 style="color: #ffcc00;">Contact</h5>
+          <p><strong style="color: #ffcc00;">Telephone:</strong><br> (+90) 0536 053 67 44</p>
+          <p><strong style="color: #ffcc00;">E-mail:</strong><br> currencycollectionmarket@gmail.com</p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h5 style="color: #ffcc00;">Pages</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-decoration-none" style="color: #ffcc00;">Home</a></li>
+            <li><a href="aboutus.html" class="text-decoration-none" style="color: #ffcc00;">About us</a></li>
+            <li><a href="contact.html" class="text-decoration-none" style="color: #ffcc00;">Contact</a></li>
+            <li><a href="faqs.html" class="text-decoration-none" style="color: #ffcc00;">FAQs</a></li>
+            <li><a href="policies.html" class="text-decoration-none" style="color: #ffcc00;">Policies</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="col-md-4 mb-3">
-        <h5 style="color: #ffcc00;">Pages</h5>
-        <ul class="list-unstyled">
-          <li><a href="index.html" class="text-decoration-none" style="color: #ffcc00;">Home</a></li>
-          <li><a href="aboutus.html" class="text-decoration-none" style="color: #ffcc00;">About us</a></li>
-          <li><a href="contact.html" class="text-decoration-none" style="color: #ffcc00;">Contact</a></li>
-		     <li><a href="faqs.html" class="text-decoration-none" style="color: #ffcc00;">FAQs</a></li>
-		     <li><a href="policies.html" class="text-decoration-none" style="color: #ffcc00;">Policies</a></li>
-        </ul>
+      <div class="mb-3">
+        <p>© 2025 CurrencyCollectionMarket.</p>
+      </div>
+
+      <div class="d-flex justify-content-center gap-3">
+        <span style="color: #f8f9fa;"><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
+        <span style="color: #f8f9fa;"><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
       </div>
     </div>
-
-    <div class="mb-3">
-      <p>© 2025 CurrencyCollectionMarket.</p>
-    </div>
-
-    <div class="d-flex justify-content-center gap-3">
-      <span style="color: #f8f9fa;"><i class="fab fa-instagram"></i> instagram.com/benimhesabim</span>
-      <span style="color: #f8f9fa;"><i class="fab fa-facebook"></i> facebook.com/benimsayfam</span>
-    </div>
-  </div>
-</footer>
-
-
+  </footer>
 </body>
 </html>
