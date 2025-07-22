@@ -203,7 +203,20 @@
       color: #000;
     }
 
-   
+    /* === Carousel & Resim Hover === */
+    .carousel {
+  display: flex;
+  flex-direction: column; /* Alt alta dizme */
+  gap: 10px; /* Resimler arası boşluk */
+}
+
+.carousel img {
+  width: 100%; /* Kart genişliğine göre */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
 
     /*
     .card::after {
