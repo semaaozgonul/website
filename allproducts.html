@@ -339,6 +339,56 @@
         gap: 10px;
       }
     }
+	
+.search-form {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.15);
+  max-width: 300px;
+  width: 100%;
+}
+
+.search-form input[type="search"] {
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  flex-grow: 1;
+  outline: none;
+}
+
+.search-form button {
+  background-color: transparent;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.search-form button:hover {
+  color: #555;
+}
+
+/* Mobilde baştan sona satır */
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  nav {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .search-form {
+    max-width: 100%;
+    margin-top: 5px;
+  }
+}
   </style>
 </head>
 
@@ -369,7 +419,19 @@
           <a href="banknote.html">Banknotes</a>
         </div>
       </div>
+	  
     </nav>
+	 <form role="search" class="search-form" onsubmit="event.preventDefault(); alert('Arama yapılacak: ' + this.search.value);">
+    <input
+      type="search"
+      name="search"
+      placeholder="Arama..." aria-label="Arama"
+      required
+    />
+    <button type="submit" aria-label="Ara">
+      🔍
+    </button>
+  </form>
   </header>
 
   <!-- MAIN -->
